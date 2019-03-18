@@ -36,19 +36,24 @@
       <div class="kind_title" @click="toggleBox(index)">
         <img :src="item.img_png" alt="" style="width: 0.38rem;vertical-align: middle;margin:-0.1rem 0.5rem 0 0.31rem;margin-top: -0.1rem;">
         <span style="color: #0093d4;font-size: 0.32rem;">{{item.title}}</span>
-        <span style="float: right;margin-right: 0.24rem;font-size: 0.64rem;color: #666;">+</span>
+        <span v-if="show_index!=index" style="float: right;margin-right: 0.24rem;font-size: 0.64rem;color: #666;">+</span>
+        <span v-else style="float: right;margin-right: 0.28rem;font-size: 0.8rem;color: #666;">-</span>
       </div>
-      <div class="card_box" v-show="show_index==index">
-        <img :src="item.url" alt="">
-      </div>
+      <transition name="fade" mode="out-in">
+        <div class="card_box"  v-show="show_index==index">
+          <img :src="item.url" alt="" style="width: 100%;height: 100%;">
+        </div>
+      </transition>
     </div>
   </div>
+  <Bottom></Bottom>
 </div>
 
 
 </template>
 
 <script type="text/ecmascript-6">
+  import Bottom from '@/components/Bottom'
   import niceP1 from '@/assets/1_network.png'
   import niceP2 from '@/assets/2_service@2x.png'
   import niceP3 from '@/assets/3_low_delay@2x.png'
@@ -73,6 +78,7 @@
       return {
         img1:niceP1,
         show_index:5,
+        active_show_index:null,
         niceArr:[
           {
             niceImg:niceP1,
@@ -132,10 +138,19 @@
         ]
       }
     },
+    components:{
+      Bottom
+    },
     methods:{
       toggleBox (index) {
-        console.log(index)
-        this.show_index = index
+        if(this.active_show_index == index){
+          this.show_index = 5
+          this.active_show_index = null
+        }else{
+          this.active_show_index = index
+          this.show_index = index
+        }
+
 
       }
     }
@@ -209,14 +224,17 @@
   background-size:cover
   padding:0 8%
   padding-bottom:0.64rem
+  margin-bottom:0.1rem
   .kind_title
     height:0.7rem
     line-height:0.7rem
     margin-top:0.24rem
     background:#fff
     border-bottom:2px solid #c0c0c0
-  .card_box
-    transition: all  2s
+.fade-enter-active,.fade-leave-active
+  transition: opacity 0.5s
+.fade-enter,.fade-leave-active
+  opacity:0
 
 
 
