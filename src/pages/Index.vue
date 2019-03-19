@@ -25,9 +25,11 @@
   <div class="productKind">
     <h3 style="color: #333;font-size: 0.32rem;margin: 0.48rem 0;text-align: center;">产品与服务</h3>
     <div class="product_box" v-for="(item,index) in productArr">
-      <img :src="item.url" alt="">
-      <img :src="item.img_png" class="png_left" alt="">
-      <span class="product_tit">{{item.title}}</span>
+     <router-link :to="item.path_">
+       <img :src="item.url" alt="">
+       <img :src="item.img_png" class="png_left" alt="">
+       <span class="product_tit">{{item.title}}</span>
+     </router-link>
     </div>
   </div>
   <div class="solve_box">
@@ -101,17 +103,20 @@
           {
             url:niceP5,
             img_png:png1,
-            title:"青牛视频直播"
+            title:"青牛视频直播",
+            path_:'/videolive'
           },
           {
             url:niceP6,
             img_png:png2,
-            title:"青牛视频呼叫中心"
+            title:"青牛视频呼叫中心",
+            path_:'/videolive'
           },
           {
             url:niceP7,
             img_png:png3,
-            title:"青牛视频会议"
+            title:"青牛视频会议",
+            path_:'/videolive'
           }
         ],
         solveArr:[
@@ -158,7 +163,7 @@
 
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import "../css/common.styl";
 .banner
   height: 6.95rem

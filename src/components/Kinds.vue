@@ -30,9 +30,11 @@
     </div>
     <div class="focus_box">
       <h3 style="color: #fff;font-size: 0.32rem;padding: 0.48rem 0;text-align: center;">亮点</h3>
-      <div class="focus_kind">
-        <img src="../assets/1_onestop_service@2x.png" alt="">
-        <p>的故事大概僧的</p>
+      <div class="all_box">
+        <div class="focus_kind" v-for="(item, index) in kinds_data.focus_data">
+          <img :src="item.img_" alt="">
+          <p>{{item.txt}}</p>
+        </div>
       </div>
     </div>
   </div>
