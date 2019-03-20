@@ -230,13 +230,16 @@
   padding-bottom 0.48rem
   background url("../assets/blue_short_bg@2x.png") no-repeat center
   background-size cover
+  color #fff
   .mint-navbar
     background:initial !important
-    .mint-tab-item-label
-      color #fff
-      font-size 0.28rem
+    .mint-tab-item
+      font-size 0.28rem!important
+      .mint-tab-item-label
+        font-size 0.28rem!important
     .mint-tab-item.is-selected
       border-bottom-color #fff
+      color #fff
 .show_box
   display flex
   flex-direction row

@@ -1,99 +1,46 @@
 <template>
   <div>
     <Kinds :kinds_data="live_video"></Kinds>
-    <div style="padding: 0 8%;padding-bottom: 0.64rem;">
-      <h3 style="padding: 0.48rem 0 0.32rem 0;color: #333;font-size: 0.32rem;text-align: center;">数据增值服务</h3>
-      <swiper :options="swiperOption" :not-next-tick="notNextTick"  ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide class="slide_">
-          <img src="../assets/1_get_content@2x.png" alt="">
-          <div>
-            帮助企业用户快速获取最佳视频内容及提供视频的组织、个人
-          </div>
-        </swiper-slide>
-        <swiper-slide class="slide_">
-          <img src="../assets/2_refresh_content@2x.png" alt="">
-          <div>
-            帮助企业用户找到完善视频内容的方法，不断优化场景营销
-          </div>
-        </swiper-slide>
-        <swiper-slide class="slide_">
-          <img src="../assets/3_analyse_content@2x.png" alt="">
-          <div>
-            基于视频内容分析，帮助企业用户精准寻找潜在客户
-          </div>
-        </swiper-slide>
-        <swiper-slide class="slide_">
-          <img src="../assets/4_analyse_user@2x.png" alt="">
-          <div>
-            基于用户群组行为分析，为客户定向精准推送视频内容
-          </div>
-        </swiper-slide>
-      </swiper>
-    </div>
     <div class="scene_box">
       <h3 style="padding: 0.48rem 0;color: #fff;text-align: center;font-size: 0.32rem;">适用于多种金融直播场景</h3>
       <mt-navbar v-model="selected">
-        <mt-tab-item id="1">营销与推广</mt-tab-item>
-        <mt-tab-item id="2">培训与沟通</mt-tab-item>
+        <mt-tab-item id="1">远程开户</mt-tab-item>
+        <mt-tab-item id="2">视频客服</mt-tab-item>
+        <mt-tab-item id="3">远程协助</mt-tab-item>
+        <mt-tab-item id="4">远程定损</mt-tab-item>
       </mt-navbar>
 
       <!-- tab-container -->
       <mt-tab-container v-model="selected">
         <mt-tab-container-item id="1">
-          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem; color: #fff;">营销与推广</h3>
-          <p style="color: #fff;font-size: 0.2rem;line-height: 0.28rem;">
-            通过在线视频方式把线下营销线上化，即可通过在线视频方式直接进行产品营销推广，
-            并直接完成营销转化；同时通过视频大数据精准分析获得客户线索，通过客户线索，
-            事后进行线下营销与转化。
+          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem;color: #0093d4; ">远程开户</h3>
+          <p style="font-size: 0.2rem;line-height: 0.28rem;margin-bottom: 0.2rem">
+            通过远程视频坐席对客户身份核实、业务事项核对、资料签署、场景见证等在线进行面签操作。此新模式全程线上办理，高效灵活，用户足不出户。
           </p>
-          <p style="color: #fff;font-size: 0.16rem;margin-top: 0.2rem;">
-            目标客群:
-          </p>
-          <p style="color: #A6D4E0;font-size: 0.16rem;margin-bottom: 0.2rem;">
-            融行业品宣、银行客户经理、保险代理人、基金财富公司的投顾
-          </p>
-          <img src="../assets/1_market@2x.jpg" alt="">
+          <img src="../assets/1_remote_open_account@2x.jpg" alt="">
         </mt-tab-container-item>
         <mt-tab-container-item id="2">
-          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem; color: #fff;">培训与沟通</h3>
-          <p style="color: #fff;font-size: 0.2rem;line-height: 0.28rem;">
-            客户经理是金融企业业绩的直接生产者，一对多的视频直播+互动，能完美地满足企业内部培训的需求，为企业营销转化助力。
+          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem; color: #0093d4;">视频客服</h3>
+          <p style="font-size: 0.2rem;line-height: 0.28rem;margin-bottom: 0.2rem">
+            可视沟通，一对一服务，身临其境的VIP级体验。
           </p>
-          <p style="color: #fff;font-size: 0.16rem;margin-top: 0.2rem;">
-            目标客群:
+          <img src="../assets/2_video_custom_services@2x.jpg" alt="">
+        </mt-tab-container-item>
+        <mt-tab-container-item id="3">
+          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem; color: #0093d4;">远程协助</h3>
+          <p style="font-size: 0.2rem;line-height: 0.28rem;margin-bottom: 0.2rem">
+            远程一对一连线，实时指导，便捷高效。
           </p>
-          <p style="color: #A6D4E0;font-size: 0.16rem;margin-bottom: 0.2rem;">
-            金融行业品宣、银行客户经理、保险代理人、基金财富公司的投顾等
+          <img src="../assets/4_remote_help@2x.jpg" alt="">
+        </mt-tab-container-item>
+        <mt-tab-container-item id="4">
+          <h3 style="padding: 0.48rem 0 0.32rem 0;font-size: 0.32rem; color: #0093d4;">远程定损</h3>
+          <p style="font-size: 0.2rem;line-height: 0.28rem;margin-bottom: 0.2rem">
+            保险公司定损员可远程通过视频坐席指导用户，对事故现场的车辆进行拍摄和鉴定，无需亲临事故现场，节约时间，杜绝骗保，高效快捷。
           </p>
-          <img src="../assets/2_train@2x.jpg" alt="">
+          <img src="../assets/5_remote_damage_claims@2x.jpg" alt="">
         </mt-tab-container-item>
       </mt-tab-container>
-    </div>
-    <div style="padding: 0 8%;padding-bottom: 0.48rem;">
-      <h3 style="color: #333;font-size: 0.32rem;padding: 0.48rem 0 0.32rem 0;text-align: center;">直播端能力展示</h3>
-      <div class="show_box">
-        <div style="margin-right: 0.3rem;">
-          <img src="../assets/1_pc@2x.png" alt="" style="height: 0.84rem;width: 0.84rem;">
-          <p style="color: #0093d4">PC端直播</p>
-        </div>
-        <div style="width: 69%;font-size: 0.2rem;color: #888;">通过PC电脑自带摄像头、麦克风和外放音响等设备进行视频直播，在直播过程中可投放ppt、word等文档，同时可插播视频或广告等</div>
-      </div>
-      <div class="show_box">
-        <div style="margin-right: 0.3rem;">
-          <img src="../assets/2_mobile@2x.png" alt="" style="height: 0.84rem;width: 0.84rem;">
-          <p style="color: #0093d4">移动端直播</p>
-        </div>
-        <div style="width: 69%;font-size: 0.2rem;color: #888;">通过手机等移动设备自带摄像头、麦克风、音响等设备进行视频直播，在直播过程中可添加美颜、前后置摄像头切换等效果。
-        </div>
-      </div>
-      <div class="show_box">
-        <div style="margin-right: 0.3rem;">
-          <img src="../assets/1_pc@2x.png" alt="" style="height: 0.84rem;width: 0.84rem;">
-          <p style="color: #0093d4">专业导播机</p>
-        </div>
-        <div style="width: 69%;font-size: 0.2rem;color: #888;">支持多种直播信号源，多机位信号切换、场景编辑与切换，多方视频互动等。</div>
-      </div>
     </div>
     <Service></Service>
     <Bottom></Bottom>
@@ -106,104 +53,65 @@
   import Bottom from '@/components/Bottom'
   import live_bj from '@/assets/1_video_live_banner@2x.jpg'
   import banner_icon from '@/assets/1_video_live@2x.png'
-  import power1 from '@/assets/1_cloud_control@2x.png'
-  import power2 from '@/assets/2_delay_play@2x.png'
-  import power3 from '@/assets/3_emergency_cut@2x.png'
-  import power4 from '@/assets/4_comments@2x.png'
-  import power5 from '@/assets/5_ad@2x.png'
-  import power6 from '@/assets/6_mini_window@2x.png'
-  import power7 from '@/assets/7_double_orientation@2x.png'
-  import power8 from '@/assets/8_video_interaction@2x.png'
-  import power9 from '@/assets/9_cloud_encoding@2x.png'
-  import focus1 from '@/assets/1_onestop_service@2x.png'
-  import focus2 from '@/assets/2_vod@2x.png'
-  import focus3 from '@/assets/3_servers@2x.png'
-  import focus4 from '@/assets/4_interaction_ways@2x.png'
-  import focus5 from '@/assets/5_controllable@2x.png'
+  import power1 from '@/assets/1_multimedia_mixed@2x.png'
+  import power2 from '@/assets/2_smart_router@2x.png'
+  import power3 from '@/assets/3_realtime_double_record@2x.png'
+  import power4 from '@/assets/4_professional_running@2x.png'
+  import power5 from '@/assets/5_multi_plantform@2x.png'
+  import power6 from '@/assets/6_api_integrated@2x.png'
+  import focus1 from '@/assets/1_professional_call_center@2x.png'
+  import focus2 from '@/assets/2_reliable@2x.png'
+  import focus3 from '@/assets/3_infinite_meeting@2x.png'
   export default {
     name: 'VideoLive',
     data () {
       return {
         selected:"1",
-        notNextTick:true,
-        swiperOption: {
-          // swiper options 所有的配置同swiper官方api配置
-          autoplay: 2000,
-          direction : 'horizontal',
-          slidesPerView : 2,
-          loop:true,
-          autoplayDisableOnInteraction : false,
-          spaceBetween : '10%',
-          pagination: '.swiper-pagination',
-          paginationClickable: true,
-          mousewheelControl: true,
-          observeParents: true,
-        },
         live_video:{
           bj:live_bj,
           banner_text:{
-            text1:"青牛视频直播",
-            text2:"在线视频营销平台",
+            text1:"青牛视频呼叫中心",
+            text2:"打造远程在线视频协同服务平台",
             banner_icon:banner_icon
           },
           power:[
             {
               imgurl:power1,
-              text:"云播控系统"
+              text:"多媒体混合通讯"
             },
             {
               imgurl:power2,
-              text:"延时播出"
+              text:"智能路由功能"
             },
             {
               imgurl:power3,
-              text:"紧急切换"
+              text:"实时双录"
             },
             {
               imgurl:power4,
-              text:"弹幕评论"
+              text:"专业运营管理"
             },
             {
               imgurl:power5,
-              text:"产品推荐"
+              text:"全平台支持"
             },
             {
               imgurl:power6,
-              text:"小窗悬浮"
-            },
-            {
-              imgurl:power7,
-              text:"横竖屏直播"
-            },
-            {
-              imgurl:power8,
-              text:"视频互动"
-            },
-            {
-              imgurl:power9,
-              text:"云转码"
-            },
+              text:"API、SDK快速集成"
+            }
           ],
           focus_data:[
             {
               img_:focus1,
-              txt:"采、编、播、看一站服务"
+              txt:"专业的视频通讯平台"
             },
             {
               img_:focus2,
-              txt:"支持直播、录像、回放"
+              txt:"安全可靠"
             },
             {
               img_:focus3,
-              txt:"高清流畅、超大并发"
-            }
-            ,{
-              img_:focus4,
-              txt:"多维度的互动手段"
-            },
-            {
-              img_:focus5,
-              txt:"有效管控、权限可控"
+              txt:"低成本、高效率"
             }
           ]
         }
@@ -228,15 +136,14 @@
 .scene_box
   padding 0 8%
   padding-bottom 0.48rem
-  background url("../assets/blue_short_bg@2x.png") no-repeat center
+  background #fff
   background-size cover
   .mint-navbar
     background:initial !important
     .mint-tab-item-label
-      color #fff
       font-size 0.28rem
     .mint-tab-item.is-selected
-      border-bottom-color #fff
+      border-bottom-color #0093d4
 .show_box
   display flex
   flex-direction row

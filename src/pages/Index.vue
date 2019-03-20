@@ -110,7 +110,7 @@
             url:niceP6,
             img_png:png2,
             title:"青牛视频呼叫中心",
-            path_:'/videolive'
+            path_:'/callcenter'
           },
           {
             url:niceP7,
