@@ -116,7 +116,7 @@
             url:niceP7,
             img_png:png3,
             title:"青牛视频会议",
-            path_:'/videolive'
+            path_:'/videometting'
           }
         ],
         solveArr:[

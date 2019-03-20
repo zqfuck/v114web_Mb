@@ -33,7 +33,7 @@
       <div class="all_box">
         <div class="focus_kind" v-for="(item, index) in kinds_data.focus_data">
           <img :src="item.img_" alt="">
-          <p>{{item.txt}}</p>
+          <p style="color: #0093d4;">{{item.txt}}</p>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
       'kinds_data'
     ],
     mounted () {
-      console.log(this.kinds_data)
+
     }
   }
 </script>
