@@ -1,10 +1,12 @@
 <template>
   <div>
     <div class="banner" :style="{backgroundImage:'url(' + kinds_data.bj + ')'}">
-      <div style="position: relative;">
-        <img class="img_logo" src="../assets/logo.png" alt="">
-        <div class="nav">
-          <button class="btn-nav">
+      <div style="position: relative;z-index: 99999999;">
+        <router-link to="/">
+          <img class="img_logo" src="../assets/logo.png" alt="">
+        </router-link>
+        <div class="nav" @click="showNav">
+          <button class="btn-nav" :class="{'animate':istrue}">
             <span class="icon-bar top"></span>
             <span class="icon-bar middle"></span>
             <span class="icon-bar bottom"></span>
@@ -45,7 +47,7 @@
     name: 'Kinds',
     data () {
       return {
-
+        istrue:false
       }
     },
     props:[
@@ -53,11 +55,21 @@
     ],
     mounted () {
 
+    },
+    methods: {
+      showNav () {
+        if(this.istrue){
+          this.istrue = false
+        }else {
+          this.istrue = true
+        }
+        this.$emit('show_nav',this.istrue)
+      }
     }
   }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import "../css/common.styl";
 @import "../css/kinds.styl";
 </style>

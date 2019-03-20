@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Kinds :kinds_data="live_video"></Kinds>
+    <Nav :isShow="show_box"></Nav>
+    <Kinds :kinds_data="live_video" @show_nav="showNav_"></Kinds>
     <div style="padding: 0 8%;padding-bottom: 0.64rem;">
       <h3 style="padding: 0.48rem 0 0.32rem 0;color: #333;font-size: 0.32rem;text-align: center;">数据增值服务</h3>
       <swiper :options="swiperOption" :not-next-tick="notNextTick"  ref="mySwiper">
@@ -103,6 +104,7 @@
 <script>
   import Kinds from '@/components/Kinds'
   import Service from '@/components/Service'
+  import Nav from '@/components/Nav'
   import Bottom from '@/components/Bottom'
   import live_bj from '@/assets/1_video_live_banner@2x.jpg'
   import banner_icon from '@/assets/1_video_live@2x.png'
@@ -125,6 +127,7 @@
     data () {
       return {
         selected:"1",
+        show_box:false,
         notNextTick:true,
         swiperOption: {
           // swiper options 所有的配置同swiper官方api配置
@@ -212,7 +215,17 @@
     components: {
       Kinds,
       Service,
-      Bottom
+      Bottom,
+      Nav
+    },
+    methods:{
+      showNav_ (data) {
+        if(data){
+          this.show_box = true
+        }else {
+          this.show_box = false
+        }
+      }
     }
   }
 </script>

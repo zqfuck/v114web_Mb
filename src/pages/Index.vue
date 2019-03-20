@@ -1,10 +1,11 @@
 <template>
 <div>
+  <Nav :isShow="show_box"></Nav>
   <div class="banner">
-    <div style="position: relative;">
-      <img class="img_logo" src="../assets/logo.png" alt="">
-      <div class="nav">
-        <button class="btn-nav">
+    <div style="position: relative;z-index: 99999999">
+      <router-link to="/"><img  class="img_logo" src="../assets/logo.png" alt=""></router-link>
+      <div class="nav" @click="showNav">
+        <button class="btn-nav" :class="{'animate':istrue}">
           <span class="icon-bar top"></span>
           <span class="icon-bar middle"></span>
           <span class="icon-bar bottom"></span>
@@ -56,6 +57,7 @@
 
 <script type="text/ecmascript-6">
   import Bottom from '@/components/Bottom'
+  import Nav from '@/components/Nav'
   import niceP1 from '@/assets/1_network.png'
   import niceP2 from '@/assets/2_service@2x.png'
   import niceP3 from '@/assets/3_low_delay@2x.png'
@@ -78,6 +80,8 @@
     name:'Index',
     data () {
       return {
+        show_box:false,
+        istrue:false,
         img1:niceP1,
         show_index:5,
         active_show_index:null,
@@ -144,7 +148,8 @@
       }
     },
     components:{
-      Bottom
+      Bottom,
+      Nav
     },
     methods:{
       toggleBox (index) {
@@ -155,8 +160,16 @@
           this.active_show_index = index
           this.show_index = index
         }
+      },
+      showNav () {
+        if(this.istrue){
+          this.show_box = false
+          this.istrue = false
 
-
+        }else {
+          this.show_box = true
+          this.istrue = true
+        }
       }
     }
   }

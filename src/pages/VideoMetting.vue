@@ -1,6 +1,7 @@
 <template>
   <div>
-    <Kinds :kinds_data="live_video"></Kinds>
+    <Nav :isShow="show_box"></Nav>
+    <Kinds :kinds_data="live_video" @show_nav="showNav_"></Kinds>
     <div class="scene_box">
       <h3 style="padding: 0.48rem 0;color: #fff;text-align: center;font-size: 0.32rem;">适用于多种视频会议场景</h3>
       <mt-navbar v-model="selected">
@@ -34,6 +35,7 @@
 <script>
   import Kinds from '@/components/Kinds'
   import Service from '@/components/Service'
+  import Nav from '@/components/Nav'
   import Bottom from '@/components/Bottom'
   import live_bj from '@/assets/1_video_meeting_banner@2x.jpg'
   import banner_icon from '@/assets/3_video_meeting@2x.png'
@@ -50,6 +52,7 @@
     data () {
       return {
         selected:"1",
+        show_box:false,
         live_video:{
           bj:live_bj,
           banner_text:{
@@ -99,7 +102,17 @@
     components: {
       Kinds,
       Service,
-      Bottom
+      Bottom,
+      Nav
+    },
+    methods:{
+      showNav_ (data) {
+        if(data){
+          this.show_box = true
+        }else {
+          this.show_box = false
+        }
+      }
     }
   }
 </script>
