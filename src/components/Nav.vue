@@ -50,7 +50,7 @@
     props:['isShow'],
     watch: {
       isShow(new_val,old_val) {
-        console.log(new_val)
+        //console.log(new_val)
         if(new_val){
           this.stop()
         }else {

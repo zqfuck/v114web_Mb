@@ -180,7 +180,7 @@
 @import "../css/common.styl";
 .banner
   height: 6.95rem
-  background:url("../assets/banner_bg.jpg") no-repeat center
+  background:url("../assets/banner_bg@2x.jpg") no-repeat center
   background-size:cover
   padding:0.28rem 8% 0
   .img_logo
