@@ -29,7 +29,7 @@
       </h3>
       <a class="connect" href="tel">4000-825-114</a>
       <span class="connect">qnmarketing2018@channelsoft.com</span>
-      <p style="color: #fff;font-size: 0.24rem;margin-top: 0.32rem;">地址:北京·海淀区阜成路73号世纪裕惠大厦A座9层</p>
+      <p style="color: #fff;font-size: 0.24rem;margin-top: 0.32rem;">地址:北京市石景山区田顺庄北路1号院古城创业大厦3号楼9层</p>
     </div>
     <div class="footer">
       <p>Copyright © 2016 channelsoft </p>
@@ -50,13 +50,22 @@
     props:['isShow'],
     watch: {
       isShow(new_val,old_val) {
-        //console.log(new_val)
+        console.log(new_val,old_val)
         if(new_val){
-          this.stop()
+          console.log(new_val)
+          //this.stop()
         }else {
-          this.move()
+          console.log(false)
+          //this.move()
         }
       }
+    },
+    beforeRouteUpdate (to, from, next) {
+      //this.move()
+      next()
+    },
+    created(){
+      this.move()
     },
     mounted () {
       this.move()
@@ -75,7 +84,7 @@
           e.preventDefault();
         };
         document.body.style.overflow = '';//出现滚动条
-        document.removeEventListener("touchmove", mo, {passive:true});
+        document.removeEventListener("touchmove", mo, {passive:false});
       }
     }
   }

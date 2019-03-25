@@ -5,7 +5,7 @@
     </div>
     <div class="address">
       <img src="../assets/channel_logo.png" alt="" style="height: 0.6rem;margin-bottom: 0.16rem;">
-      <p>北京·海淀区阜成路73号世纪裕惠大厦A座9层</p>
+      <p>北京市石景山区田顺庄北路1号院古城创业大厦3号楼9层</p>
       <p style="margin: 0.08rem 0"><a href="tel">4000-825-114</a></p>
       <p>marketing@channelsoft.com</p>
     </div>
