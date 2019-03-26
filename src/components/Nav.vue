@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap" :class="{show_wrap:isShow}" >
+  <div class="wrap" :class="{show_wrap:isShow}" @touchmove.prevent>
     <h3 class="service ">
       产品与服务
     </h3>
@@ -24,12 +24,12 @@
       </router-link>
     </div>
     <div>
-      <h3 style="margin: 0.48rem 0 0.24rem 0;color: #fff;font-size: 0.36rem;">
+      <h3 style="margin: 0.38rem 0 0.2rem 0;color: #fff;font-size: 0.36rem;">
         联系我们
       </h3>
       <a class="connect" href="tel">4000-825-114</a>
       <span class="connect">qnmarketing2018@channelsoft.com</span>
-      <p style="color: #fff;font-size: 0.24rem;margin-top: 0.32rem;">地址:北京市石景山区田顺庄北路1号院古城创业大厦3号楼9层</p>
+      <p style="color: #fff;font-size: 0.24rem;margin-top: 0.22rem;">地址:北京市石景山区田顺庄北路1号院古城创业大厦3号楼9层</p>
     </div>
     <div class="footer">
       <p>Copyright © 2016 channelsoft </p>
